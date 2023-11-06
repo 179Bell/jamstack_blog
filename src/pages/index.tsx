@@ -1,18 +1,28 @@
 import { client } from '../../libs/client';
 
-export default function Home({ data }) {
-  console.log(data);
-  return <main></main>;
+type Blog = {
+  id: string;
+  title: string;
+  content: string;
+  eyecatch: string;
+};
+
+export default function Home(blogs: Blog[]) {
+  return (
+    <>
+      <main></main>
+    </>
+  );
 }
 
 export const getStaticProps = async () => {
-  const data = await client.get({
+  const blog = await client.get({
     endpoint: 'blog',
   });
 
   return {
     props: {
-      data,
+      blogs: blog.contents,
     },
   };
 };
