@@ -14,7 +14,7 @@ export default function Layout({ children }: any) {
   return (
     <>
       <Header />
-      <main className={`${notoJp.variable} font-notojp`}>{children}</main>
+      <main className={`${notoJp.variable}`}>{children}</main>
       <Footer />
     </>
   );

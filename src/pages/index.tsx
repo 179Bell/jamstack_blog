@@ -5,12 +5,25 @@ type Blog = {
   title: string;
   content: string;
   eyecatch: string;
+  createdAt: string;
 };
 
-export default function Home(blogs: Blog[]) {
+type Props = {
+  blogs: Blog[];
+};
+
+export default function Home({ blogs }: Props) {
   return (
     <>
-      <main></main>
+      <div className="container p-4">
+        {blogs.map((blog) => (
+          <div key={blog.id} className="border">
+            <div>アイキャッチ</div>
+            <span>{blog.createdAt}</span>
+            <h2>{blog.title}</h2>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
