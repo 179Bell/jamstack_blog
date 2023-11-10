@@ -7,12 +7,12 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      theme: '#FAF8F2',
-      sub: '#7BB6E3',
-      accents: '#007bbb',
-    },
     extend: {
+      colors: {
+        theme: '#FAF8F2',
+        sub: '#7BB6E3',
+        accents: '#007bbb',
+      },
       fontFamily: {
         notojp: ['var(--font-notojp)'],
       },
