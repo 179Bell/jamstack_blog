@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { client } from '../../libs/client';
+import { formatDate } from '../../libs/formatDate';
 
 type Blog = {
   id: string;
@@ -31,7 +32,7 @@ export default function Home({ blogs }: Props) {
                     height={200}
                     alt={blog.title}
                   />
-                  <span>{blog.createdAt}</span>
+                  <span>{formatDate(blog.createdAt)}</span>
                   <h2>{blog.title}</h2>
                 </div>
               </Link>
