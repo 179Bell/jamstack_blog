@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { client } from '../../../libs/client';
 import { formatDate } from '../../../libs/formatDate';
+import { MarkdownTemplate } from '@/components/MarkdownTemplate';
 
 type Blog = {
   blog: {
@@ -30,7 +31,7 @@ export default function Detail({ blog }: Blog) {
           width={400}
           height={300}
         />
-        <p>{blog.content}</p>
+        <MarkdownTemplate props={blog.content} />
       </div>
     </>
   );
