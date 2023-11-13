@@ -1,18 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { client } from '../../libs/client';
-// @ts-ignore
-import { formatDate } from '../../libs/formatDate';
-
-type Blog = {
-  id: string;
-  title: string;
-  content: string;
-  eyecatch: {
-    url: string;
-  };
-  createdAt: string;
-};
+import { Blog } from '../../types/Blog';
+import PostCard from '@/components/PostCard';
 
 type Props = {
   blogs: Blog[];
@@ -25,18 +13,7 @@ export default function Home({ blogs }: Props) {
         <div className="w-full md:w-8/12">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
             {blogs.map((blog) => (
-              <Link key={blog.id} href={`/blog/${blog.id}`}>
-                <div className="transition-transform duration-300 ease-in-out transform hover:translate-y-[-2px] hover:bg-slate-100 border col-span-1">
-                  <Image
-                    src={blog.eyecatch.url}
-                    width={200}
-                    height={200}
-                    alt={blog.title}
-                  />
-                  <span>{formatDate(blog.createdAt)}</span>
-                  <h2>{blog.title}</h2>
-                </div>
-              </Link>
+              <PostCard key={blog.id} blog={blog} />
             ))}
           </div>
         </div>

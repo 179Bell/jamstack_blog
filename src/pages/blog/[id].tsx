@@ -1,22 +1,14 @@
 import Image from 'next/image';
 import { client } from '../../../libs/client';
 import { formatDate } from '../../../libs/formatDate';
+import { Blog } from '../../../types/Blog';
 import { MarkdownTemplate } from '@/components/MarkdownTemplate';
 
-type Blog = {
-  blog: {
-    id: string;
-    title: string;
-    content: string;
-    eyecatch: {
-      url: string;
-    };
-    createdAt: string;
-    revisedAt: string;
-  };
+type Props = {
+  blog: Blog;
 };
 
-export default function Detail({ blog }: Blog) {
+export default function Detail({ blog }: Props) {
   return (
     <>
       <div className="container h-full md:mx-auto p-4">
