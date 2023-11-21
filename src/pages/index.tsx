@@ -21,6 +21,9 @@ export default function Home({ blogs }: Props) {
 export const getStaticProps = async () => {
   const blog = await client.get({
     endpoint: 'blog',
+    queries: {
+      orders: 'createdAt',
+    },
   });
 
   return {
