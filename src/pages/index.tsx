@@ -1,6 +1,7 @@
 import { client } from '../../libs/client';
 import { Blog } from '../../types/Blog';
 import PostCard from '@/components/PostCard';
+import Profile from '@/components/Profile';
 
 type Props = {
   blogs: Blog[];
@@ -13,6 +14,10 @@ export default function Home({ blogs }: Props) {
         {blogs.map((blog) => (
           <PostCard key={blog.id} blog={blog} />
         ))}
+        {}
+        <div className="md:hidden">
+          <Profile />
+        </div>
       </div>
     </>
   );

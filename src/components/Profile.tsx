@@ -10,7 +10,7 @@ export default function Profile() {
 
   return (
     <aside className="bg-white">
-      <div className="flex flex-col items-center p-6">
+      <div className="flex flex-col items-center px-6 py-3 md:p-6">
         <Image
           className="border rounded-full"
           src={Icon}
@@ -19,6 +19,7 @@ export default function Profile() {
           height={200}
         />
         <p className="text-xl py-2">すずむら</p>
+        <p className="text-gray-400 pb-2">バックエンドエンジニア</p>
         <p>
           海上自衛官からWebエンジニアに今年の1月に転職した1996年生まれです。
           <br />
