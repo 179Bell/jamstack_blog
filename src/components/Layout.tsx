@@ -15,18 +15,20 @@ const notoJp = Noto_Sans_JP({
 export default function Layout({ children }: any) {
   return (
     <>
-      <Header />
-      <main className={`${notoJp.variable}`}>
-        <div className="container h-screen md:mx-auto p-4">
-          <div className="flex flex-row justify-between ">
-            <div className="w-full md:w-8/12">{children}</div>
-            <Sidebar>
-              <Profile />
-            </Sidebar>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className={`${notoJp.variable}`}>
+          <div className="container md:mx-auto p-4">
+            <div className="flex flex-row justify-between ">
+              <div className="w-full md:w-8/12">{children}</div>
+              <Sidebar>
+                <Profile />
+              </Sidebar>
+            </div>
           </div>
-        </div>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
